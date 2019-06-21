@@ -1,6 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 import { Subscription } from 'rxjs';
+import { UserSearchService } from '../services/user-search.service';
 
 
 @Component({
@@ -10,11 +11,14 @@ import { Subscription } from 'rxjs';
 })
 export class UserTableComponent extends UnsubscribeOnDestroyComponent implements AfterViewInit {
 
-    private __usersSubscription: Subscription;
+
+    constructor(private __userSearch: UserSearchService) {
+        super();
+    }
 
 
     ngAfterViewInit(): void {
-        this._subscriptions.push(this.__usersSubscription);
+        this._subscriptions.push(this.__userSearch.subscription);
     }
 
 }
