@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { AppPaginator } from '@writetome51/app-paginator';
-import { DataSourceService } from './data-source.service';
+import { PaginatorDataSourceService } from './paginator-data-source.service';
 
 
 @Injectable()
 export class PaginatorService extends AppPaginator {
 
-    constructor(dataSource: DataSourceService) {
+    constructor(dataSource: PaginatorDataSourceService) {
         super(dataSource);
     }
 }

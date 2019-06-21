@@ -4,10 +4,13 @@ import { getTail } from '@writetome51/array-get-head-tail';
 import { getAdjacentAt } from '@writetome51/array-get-adjacent-at';
 
 
+// `this.data` will be manipulated outside this class by search and sorting
+// services.
+
 @Injectable({
     providedIn: 'root'
 })
-export class DataSourceService extends PublicArrayContainer {
+export class PaginatorDataSourceService extends PublicArrayContainer {
 
 
     constructor() {
