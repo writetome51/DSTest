@@ -6,6 +6,8 @@ import { PaginatorDataSourceService } from './services/paginator-data-source.ser
 import { NgModule } from '@angular/core';
 import { PaginatorService } from './services/paginator.service';
 import { UserTableComponent } from './user-table/user-table.component';
+import { FormsModule } from '@angular/forms';
+import { UserSearchFieldComponent } from './user-search-field/user-search-field.component';
 
 
 @NgModule({
@@ -13,10 +15,12 @@ import { UserTableComponent } from './user-table/user-table.component';
         AppComponent,
         CollapsibleDetailRowDirective,
         UserTableComponent,
+        UserSearchFieldComponent,
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule
     ],
     providers: [PaginatorDataSourceService, PaginatorService],
     bootstrap: [AppComponent]

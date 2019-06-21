@@ -10,6 +10,7 @@ export class UserSearchService extends SearchService {
 
         this.searchAlgorithm = (user) => {
             if (user.name === undefined) return false;
+
             return (user.name.includes(this.searchText));
         };
     }
