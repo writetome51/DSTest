@@ -3,7 +3,9 @@ import { AppPaginator } from '@writetome51/app-paginator';
 import { PaginatorDataSourceService } from './paginator-data-source.service';
 
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class PaginatorService extends AppPaginator {
 
     constructor(dataSource: PaginatorDataSourceService) {
