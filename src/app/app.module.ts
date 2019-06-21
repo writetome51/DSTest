@@ -2,27 +2,31 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CollapsibleDetailRowDirective } from './collapsible-detail-row.directive';
-import { PaginatorDataSourceService } from './services/paginator-data-source.service';
-import { NgModule } from '@angular/core';
-import { PaginatorService } from './services/paginator.service';
-import { UserTableComponent } from './user-table/user-table.component';
+import { DataService } from './services/data.service';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { PaginatorDataSourceService } from './services/paginator-data-source.service';
+import { PaginatorService } from './services/paginator.service';
 import { UserSearchFieldComponent } from './user-search-field/user-search-field.component';
+import { UserTableComponent } from './user-table/user-table.component';
+import { UserSearchService } from './services/user-search.service';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         CollapsibleDetailRowDirective,
-        UserTableComponent,
         UserSearchFieldComponent,
+        UserTableComponent,
     ],
     imports: [
-        BrowserModule,
         AppRoutingModule,
-        FormsModule
+        BrowserModule,
+        FormsModule,
+        HttpClientModule
     ],
-    providers: [PaginatorDataSourceService, PaginatorService],
+    providers: [DataService, PaginatorDataSourceService, PaginatorService, UserSearchService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
