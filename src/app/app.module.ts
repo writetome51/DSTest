@@ -5,12 +5,14 @@ import { CollapsibleDetailRowDirective } from './collapsible-detail-row.directiv
 import { PaginatorDataSourceService } from './services/paginator-data-source.service';
 import { NgModule } from '@angular/core';
 import { PaginatorService } from './services/paginator.service';
+import { UserTableComponent } from './user-table/user-table.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         CollapsibleDetailRowDirective,
+        UserTableComponent,
     ],
     imports: [
         BrowserModule,
