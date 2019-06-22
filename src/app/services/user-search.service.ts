@@ -7,12 +7,11 @@ import { UsersObservableService } from './users-observable.service';
 export class UserSearchService extends SearchService {
 
     constructor(__usersObservable: UsersObservableService) {
+
         super(__usersObservable);
 
         this.searchAlgorithm = (user) => {
-            if (user.name === undefined) {
-                return false;
-            }
+            if (user.name === undefined) return false;
             else return (user.name.includes(this.searchText));
         };
     }

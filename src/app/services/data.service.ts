@@ -15,7 +15,9 @@ export class DataService {
     }
 
 
-    get(): Observable<any> {
-        return this.__http.get(this.__url);
+    getObservableFunction() {
+        return (): Observable<any> => {
+            return this.__http.get(this.__url);
+        };
     }
 }

@@ -13,13 +13,18 @@ export class UserSearchFieldComponent {
     }
 
 
-    get searchText() {
-        return this.__userSearch.searchText;
+    set searchText(value) {
+
+        let interval = setInterval(() => {
+            this.__userSearch.searchText = value;
+            clearInterval(interval);
+        }, 400);
+
     }
 
 
-    set searchText(value) {
-        this.__userSearch.searchText = value;
+    get searchText() {
+        return this.__userSearch.searchText;
     }
 
 

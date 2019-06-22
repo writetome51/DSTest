@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 import { UserSearchService } from '../services/user-search.service';
 
