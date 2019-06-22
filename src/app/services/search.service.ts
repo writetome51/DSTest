@@ -9,7 +9,6 @@ export abstract class SearchService {
     searchAlgorithm: (value, index?, array?) => boolean;
     subscription: Subscription;
 
-    private __data: any[]; // contains all data before getting filtered by search.
     private __results = [];
     private __searchText = '';
 

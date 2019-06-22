@@ -1,6 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
-import { Subscription } from 'rxjs';
 import { UserSearchService } from '../services/user-search.service';
 
 
@@ -14,6 +13,11 @@ export class UserTableComponent extends UnsubscribeOnDestroyComponent implements
 
     constructor(private __userSearch: UserSearchService) {
         super();
+    }
+
+
+    get results(){
+        return this.__userSearch.results;
     }
 
 

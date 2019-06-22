@@ -13,7 +13,7 @@ export class UserSearchService extends SearchService {
             if (user.name === undefined) {
                 return false;
             }
-            return (user.name.includes(this.searchText));
+            else return (user.name.includes(this.searchText));
         };
     }
 
