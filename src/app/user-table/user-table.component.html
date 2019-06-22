@@ -1,6 +1,6 @@
 <user-search-field></user-search-field>
 
 
-<div *ngIf="results.length > 0">
-	{{results.length}}
+<div *ngFor="let user of users">
+	{{user.name}}
 </div>

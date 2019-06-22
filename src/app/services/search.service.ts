@@ -58,7 +58,7 @@ export abstract class SearchService {
     private __getResults(): any[] {
         if (noValue(this.searchAlgorithm)) {
             throw new Error(
-                'The \'searchAlgorithm\' property must be set before you can access the \'results\' property'
+                'The \'searchAlgorithm\' property must be set before you can access the \'users\' property'
             );
         }
         return this.__data.filter(this.searchAlgorithm);

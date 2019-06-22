@@ -12,7 +12,12 @@ export class UserSearchService extends SearchService {
 
         this.searchAlgorithm = (user) => {
             if (user.name === undefined) return false;
-            else return (user.name.includes(this.searchText));
+
+            else {
+                let searchText = this.searchText.toLowerCase();
+                let username = user.name.toLowerCase();
+                return (username.includes(searchText));
+            }
         };
     }
 
