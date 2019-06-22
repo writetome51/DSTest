@@ -14,6 +14,7 @@ export class UserSearchFieldComponent {
 
 
     set searchText(value) {
+        // Waits 0.4 second before updating.
 
         let interval = setInterval(() => {
             this.__userSearch.searchText = value;

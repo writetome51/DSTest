@@ -15,7 +15,9 @@ export abstract class SearchService {
 
 
     constructor(private __observable: ObservableService) {
-        if (!(this.subscription)) this.__set_subscription();
+        if (!(this.subscription)) {
+            this.__set_subscription();
+        }
     }
 
 
@@ -30,7 +32,7 @@ export abstract class SearchService {
     }
 
 
-    get searchText() {
+    get searchText(): string {
         return this.__searchText;
     }
 
@@ -53,7 +55,7 @@ export abstract class SearchService {
     }
 
 
-    private __getResults() {
+    private __getResults(): any[] {
         if (noValue(this.searchAlgorithm)) {
             throw new Error(
                 'The \'searchAlgorithm\' property must be set before you can access the \'results\' property'
@@ -64,4 +66,3 @@ export abstract class SearchService {
 
 
 }
-
