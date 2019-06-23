@@ -10,7 +10,7 @@ export class UserSearchService extends SearchService {
 
         super(__usersObservable);
 
-        this.searchAlgorithm = (user) => {
+        this._searchAlgorithm = (user) => {
             if (user.name === undefined) return false;
 
             else {
