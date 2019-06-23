@@ -11,19 +11,19 @@ export class PaginatorDataSourceService {
 
 
     constructor(
-        // The data is filtered by SearchService before getting handed to the Paginator.
+        // The data is filtered by UserSearchService before getting handed to the Paginator.
         private __userSearch: UserSearchService
     ) {
     }
 
 
-    get data() {
+    private get __data() {
         return this.__userSearch.results;
     }
 
 
     get dataTotal(): number {
-        return this.data.length;
+        return this.__data.length;
     }
 
 
@@ -33,9 +33,9 @@ export class PaginatorDataSourceService {
         if (isLastBatch) {
             // ...only return the remaining items in array, not itemsPerBatch:
             let numItemsToGet = (this.dataTotal - start);
-            return getTail(numItemsToGet, this.data);
+            return getTail(numItemsToGet, this.__data);
         } else {
-            return getAdjacentAt(start, itemsPerBatch, this.data);
+            return getAdjacentAt(start, itemsPerBatch, this.__data);
         }
     }
 }

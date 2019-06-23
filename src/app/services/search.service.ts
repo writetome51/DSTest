@@ -16,7 +16,7 @@ export abstract class SearchService {
 
     constructor(private __observable: ObservableService) {
         if (noValue(this.__subscription)) {
-            this.__set_subscription();
+            this.__set__subscription();
         }
     }
 
@@ -42,7 +42,7 @@ export abstract class SearchService {
     }
 
 
-    private async __set_subscription() {
+    private async __set__subscription() {
 
         this.__subscription = await this.__observable.subscribe((data) => {
             this.__data = data;
