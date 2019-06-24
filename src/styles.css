@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.column {
+    display: inline-block;
+    border: 1px solid black;
+    padding-top: 5px;
+}
+
+.column div {
+    padding: 2px 7px;
+}
+
+.column .column-header {
+    font-weight: bold;
+    padding-bottom: 6px;
+}
+
+#search-field {
+    margin-bottom: 15px;
+}

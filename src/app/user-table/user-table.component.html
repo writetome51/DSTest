@@ -1,3 +1,27 @@
-<div *ngFor="let user of users">
-	{{user.name}}
+<div *ngIf="users.length > 0"  id="user-table">
+
+	<div id="name-column" class="column">
+		<div class="column-header">Name</div>
+		<div *ngFor="let user of users">
+			{{user.name}}
+		</div>
+	</div>
+
+	<div id="username-column" class="column">
+		<div class="column-header">Username</div>
+		<div *ngFor="let user of users">
+			{{user.username}}
+		</div>
+	</div>
+
+	<div id="email-column" class="column">
+		<div class="column-header">Email</div>
+		<div *ngFor="let user of users">
+			{{user.email}}
+		</div>
+	</div>
+
 </div>
+
+
+<!-- name, username, email   -->

@@ -4,8 +4,7 @@ import { UserSearchService } from '../services/user-search.service';
 
 @Component({
     selector: 'user-search-field',
-    templateUrl: './user-search-field.component.html',
-    styleUrls: ['./user-search-field.component.sass']
+    templateUrl: './user-search-field.component.html'
 })
 export class UserSearchFieldComponent {
 
