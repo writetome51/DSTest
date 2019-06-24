@@ -16,6 +16,8 @@ export class UserTableComponent extends UnsubscribeOnDestroyComponent implements
         {name: 'Email', property: 'email'}
     ];
 
+    highlightedRow = -1;
+
 
     constructor(private __userSearch: UserSearchService) {
         super();

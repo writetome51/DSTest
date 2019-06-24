@@ -4,7 +4,9 @@
 
 		<div class="column-header">{{column.name}}</div>
 
-		<div *ngFor="let user of users">
+		<div *ngFor="let user of users;let i = index" class="table-row"
+			 [class.highlightedRow]="i === highlightedRow" (mouseover)="highlightedRow = i"
+			 (mouseout)="highlightedRow = -1">
 			{{user[column.property]}}
 		</div>
 

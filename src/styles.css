@@ -8,8 +8,7 @@
     display: inline-block;
     padding-top: 5px;
     margin: auto;
-    min-width: 170px;
-    max-width: 170px;
+    width: 100%;
 }
 
 .column div {
@@ -27,4 +26,12 @@
 
 #user-table {
     display: flex;
+}
+
+.table-row{
+    cursor: pointer;
+}
+
+.highlightedRow {
+    background-color: #ececec;
 }
