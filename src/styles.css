@@ -1,10 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
+.container {
+    min-width: 600px;
+}
 
 .column {
     display: inline-block;
-    border: 1px solid black;
     padding-top: 5px;
+    margin: auto;
+    min-width: 170px;
+    max-width: 170px;
 }
 
 .column div {
@@ -18,4 +23,8 @@
 
 #search-field {
     margin-bottom: 15px;
+}
+
+#user-table {
+    display: flex;
 }

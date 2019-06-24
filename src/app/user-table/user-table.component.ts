@@ -10,13 +10,19 @@ import { UserSearchService } from '../services/user-search.service';
 })
 export class UserTableComponent extends UnsubscribeOnDestroyComponent implements AfterViewInit {
 
+    columns = [
+        {name: 'Name', property: 'name'},
+        {name: 'Username', property: 'username'},
+        {name: 'Email', property: 'email'}
+    ];
+
 
     constructor(private __userSearch: UserSearchService) {
         super();
     }
 
 
-    get users(){
+    get users() {
         return this.__userSearch.results;
     }
 
