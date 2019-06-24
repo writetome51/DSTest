@@ -12,6 +12,7 @@ import { UserSearchFieldComponent } from './user-search-field/user-search-field.
 import { UserTableComponent } from './user-table/user-table.component';
 import { UserSearchService } from './services/user-search.service';
 import { UsersObservableService } from './services/users-observable.service';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { UsersObservableService } from './services/users-observable.service';
         CollapsibleDetailRowDirective,
         UserSearchFieldComponent,
         UserTableComponent,
+        UsersComponent,
     ],
     imports: [
         AppRoutingModule,
