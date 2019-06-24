@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { SearchService } from './search.service';
 import { UsersObservableService } from './users-observable.service';
+import { SubscriptionSearchService } from './subscription-search.service';
 
 
 @Injectable()
-export class UserSearchService extends SearchService {
+export class UserSearchService extends SubscriptionSearchService {
 
     constructor(__usersObservable: UsersObservableService) {
 

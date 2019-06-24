@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DataService } from './data.service';
+import { ObservableDataService } from './observable-data.service';
 import { ObservableService } from '@writetome51/observable-service';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { ObservableService } from '@writetome51/observable-service';
 })
 export class UsersObservableService extends ObservableService{
 
-  constructor(private __data: DataService) {
+  constructor(private __data: ObservableDataService) {
       super(__data.getObservableFunction());
   }
 

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
     providedIn: 'root'
 })
-export class DataService {
+export class ObservableDataService {
 
     private __url = 'https://jsonplaceholder.typicode.com/users';
 
