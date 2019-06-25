@@ -38,7 +38,7 @@
 		 [class.highlightedRow]="i === highlightedRow"
 		 (mouseover)="highlightedRow = i"
 		 (mouseout)="highlightedRow = -1"
-		 [collapsibleDetailRow]="user" [collapsibleDetailRowTpl]="expandedRowTpl"
+		 [collapsibleDetailRow]="user" [collapsibleDetailRowTpl]
 		 (toggleChange)="onToggleRow($event)"
 	>
 		<div *ngFor="let column of columns" class="column">
@@ -48,32 +48,3 @@
 
 </div>
 
-
-<!--   Hidden Subtable    -->
-<ng-template #expandedRowTpl let-this>
-	<div [@detailExpand]>
-
-		<!--   Subtable header row    -->
-		<div class="mini-row  subtable-header-row">
-			<div *ngFor="let subtableColumn of subtableColumns"
-				 class="cell"
-			>
-				{{subtableColumn.name}}
-			</div>
-		</div>
-		<!--  / Subtable header row   -->
-
-
-		<!--   Subtable data row    -->
-		<div *ngFor="let row of thisRow.rows; let rowID = index;" title="Click for rates"
-			 class="mini-row subtable-data-row"
-			 [class.highlightedRow]="highlightedSubtableRow === rowID"
-			 (mouseover)="highlightRow('highlightedSubtableRow',rowID)"
-		>
-
-		</div>
-		<!--  / Subtable data row   -->
-
-	</div>
-</ng-template>
-<!--  / Hidden Subtable    -->

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
     providedIn: 'root'
 })
-export class ObservableDataService {
+export class ObservableAPIDataService {
 
     private __url = 'https://jsonplaceholder.typicode.com/users';
 
@@ -15,9 +15,7 @@ export class ObservableDataService {
     }
 
 
-    getObservableFunction() {
-        return (): Observable<any> => {
-            return this.__http.get(this.__url);
-        };
+    get(): Observable<any> {
+        return this.__http.get(this.__url);
     }
 }

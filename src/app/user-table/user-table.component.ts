@@ -1,7 +1,9 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { CollapsibleDetailRowDirective } from '../collapsible-detail-row.directive';
+import { getProperty } from '@writetome51/get-property';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 import { UserSearchService } from '../services/user-search.service';
-import { CollapsibleDetailRowDirective } from '../collapsible-detail-row.directive';
+import { UserDisplayPrepService } from '../services/user-display-prep.service';
 
 
 @Component({
@@ -16,16 +18,18 @@ export class UserTableComponent extends UnsubscribeOnDestroyComponent implements
         {name: 'Email', property: 'email'}
     ];
     subtableColumns = [
-        {name: 'Address', property: ''}, {name: 'Phone', property: ''},
-        {name: 'Website', property: ''}, {name: 'Company', property: ''},
-        {name: 'Business Strategy', property: ''}
+        {name: 'Address', property: 'full_address'}, {name: 'Phone', property: 'phone'},
+        {name: 'Website', property: 'website'}, {name: 'Company', property: 'company_name'},
+        {name: 'Business Strategy', property: 'business_strategy'}
     ];
 
     highlightedRow = -1; // the index of the row.
     private __openedRow: CollapsibleDetailRowDirective;
 
 
-    constructor(private __userSearch: UserSearchService) {
+    constructor(
+        private __userSearch: UserSearchService
+    ) {
         super();
     }
 
@@ -49,3 +53,37 @@ export class UserTableComponent extends UnsubscribeOnDestroyComponent implements
 
 
 }
+
+
+/**********
+
+ <!--   Hidden Subtable    -->
+ <ng-template #expandedRowTpl let-this>
+ <div [@detailExpand]>
+
+ <!--   Subtable header row    -->
+ <div class="mini-row  subtable-header-row">
+ <div *ngFor="let subtableColumn of subtableColumns"
+ class="cell"
+ >
+ {{subtableColumn.name}}
+ </div>
+ </div>
+ <!--  / Subtable header row   -->
+
+
+ <!--   Subtable data row    -->
+ <div *ngFor="let row of thisRow.rows; let rowID = index;" title="Click for rates"
+ class="mini-row subtable-data-row"
+ [class.highlightedRow]="highlightedSubtableRow === rowID"
+ (mouseover)="highlightRow('highlightedSubtableRow',rowID)"
+ >
+
+ </div>
+ <!--  / Subtable data row   -->
+
+ </div>
+ </ng-template>
+ <!--  / Hidden Subtable    -->
+
+ *********/

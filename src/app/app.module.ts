@@ -5,7 +5,7 @@ import { CollapsibleDetailRowDirective } from './collapsible-detail-row.directiv
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ObservableDataService } from './services/observable-data.service';
+import { ObservableAPIDataService } from './services/observable-api-data.service';
 import { UserSearchFieldComponent } from './user-search-field/user-search-field.component';
 import { UserTableComponent } from './user-table/user-table.component';
 import { UserSearchService } from './services/user-search.service';
@@ -30,7 +30,7 @@ import { ExampleDirective } from './example.directive';
         HttpClientModule
     ],
     providers: [
-        ObservableDataService, UserSearchService, UsersObservableService
+        ObservableAPIDataService, UserSearchService, UsersObservableService
     ],
     bootstrap: [AppComponent]
 })

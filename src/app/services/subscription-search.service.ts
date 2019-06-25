@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
 
 export abstract class SubscriptionSearchService extends AbstractSearchService {
 
+
     private __subscription: Subscription; // the subscription to this._data
 
 
@@ -29,9 +30,6 @@ export abstract class SubscriptionSearchService extends AbstractSearchService {
 
         this.__subscription = await this.__observable.subscribe((data) => {
             this._data = data;
-
-            //temp:
-            console.log(data);
         });
     }
 
