@@ -4,11 +4,17 @@
     min-width: 600px;
 }
 
+.row {
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+}
+
 .column {
     display: inline-block;
     padding-top: 5px;
+    min-width: 200px;
     margin: auto;
-    width: 100%;
 }
 
 .column div {
@@ -25,13 +31,13 @@
 }
 
 #user-table {
-    display: flex;
-}
-
-.row-cell{
-    cursor: pointer;
+    padding-left: 30px;
 }
 
 .highlightedRow {
     background-color: #ececec;
+}
+
+#header-row {
+    cursor: default;
 }

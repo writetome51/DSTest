@@ -1,3 +1,5 @@
+<!--
+
 <div id="user-table">
 
 	<div *ngFor="let column of columns" class="column">
@@ -20,3 +22,26 @@
 
 
 <button appExample>Button</button>
+
+-->
+
+
+<div id="user-table">
+
+	<div class="row" id="header-row">
+		<div *ngFor="let column of columns" class="column">
+			<div class="column-header">{{column.name}}</div>
+		</div>
+	</div>
+
+	<div *ngFor="let user of users; let i = index" class="row"
+		 [class.highlightedRow]="i === highlightedRow"
+		 (mouseover)="highlightedRow = i"
+		 (mouseout)="highlightedRow = -1"
+	>
+		<div *ngFor="let column of columns" class="column">
+			<div>{{user[column.property]}}</div>
+		</div>
+	</div>
+
+</div>
