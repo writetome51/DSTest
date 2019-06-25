@@ -15,6 +15,11 @@ export class UserTableComponent extends UnsubscribeOnDestroyComponent implements
         {name: 'Username', property: 'username'},
         {name: 'Email', property: 'email'}
     ];
+    subtableColumns = [
+        {name: 'Address', property: ''}, {name: 'Phone', property: ''},
+        {name: 'Website', property: ''}, {name: 'Company', property: ''},
+        {name: 'Business Strategy', property: ''}
+    ];
 
     highlightedRow = -1; // the index of the row.
     private __openedRow: CollapsibleDetailRowDirective;
@@ -32,6 +37,14 @@ export class UserTableComponent extends UnsubscribeOnDestroyComponent implements
 
     ngAfterViewInit(): void {
         this._subscriptions.push(this.__userSearch.subscription);
+    }
+
+
+    onToggleRow(cdkDetailRow: CollapsibleDetailRowDirective): void {
+        if (this.__openedRow && this.__openedRow.expended) {
+            this.__openedRow.toggle();
+        }
+        this.__openedRow = cdkDetailRow.expended ? cdkDetailRow : undefined;
     }
 
 

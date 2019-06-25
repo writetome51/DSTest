@@ -21,9 +21,13 @@
     padding: 2px 7px;
 }
 
-.column .column-header {
+.column .column-header-text {
     font-weight: bold;
     padding-bottom: 6px;
+}
+
+.highlightedRow {
+    background-color: #ececec;
 }
 
 #search-field {
@@ -34,10 +38,32 @@
     padding-left: 30px;
 }
 
-.highlightedRow {
-    background-color: #ececec;
-}
-
 #header-row {
     cursor: default;
+}
+
+.mini-row {
+    display: flex;
+    margin: auto;
+    padding: 5px;
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid #d6d6d6;
+    position: relative;
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.mini-row .cell {
+    margin: auto;
+    text-align: center;
+}
+
+.subtable-data-row, .dropdown-menu-item {
+    cursor: pointer;
+}
+
+.subtable-header-row {
+    color: rgba(0, 0, 0, 0.54);
 }
