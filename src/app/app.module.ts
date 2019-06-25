@@ -13,6 +13,7 @@ import { UserTableComponent } from './user-table/user-table.component';
 import { UserSearchService } from './services/user-search.service';
 import { UsersObservableService } from './services/users-observable.service';
 import { UsersComponent } from './users/users.component';
+import { ExampleDirective } from './example.directive';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { UsersComponent } from './users/users.component';
         UserSearchFieldComponent,
         UserTableComponent,
         UsersComponent,
+        ExampleDirective,
     ],
     imports: [
         AppRoutingModule,

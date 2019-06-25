@@ -1,4 +1,4 @@
-/***********************************
+/********************
 
 import {
     AfterViewInit,
@@ -51,25 +51,6 @@ export class LinguistsListComponent implements OnInit, AfterViewInit {
     }
 
 
-    ngOnInit() {
-        this.usersDataSourceService.loadNewSort();
-    }
-
-
-    ngAfterViewInit() {
-        this.sortSubscription = this.sort.sortChange.subscribe(
-            (column) => {
-                this.usersDataSourceService.loadNewSort(column);
-            }
-        );
-
-        this.subscriptions = this.subscriptions.concat(
-            // Add any subscriptions this component is using to this array:
-            [
-                this.sortSubscription,
-            ]
-        );
-    }
 
 
     onToggleRow(cdkDetailRow: CollapsibleDetailRowDirective): void {
@@ -89,11 +70,6 @@ export class LinguistsListComponent implements OnInit, AfterViewInit {
     }
 
 
-    highlightRow(highlightedRow, rowIndex) {
-        this[highlightedRow] = rowIndex;
-    }
-
-
     toggleDropdown(rowIndex, event) {
         event.stopPropagation();
         if (this.dropdownMenu.rowIndex === rowIndex) {
@@ -104,11 +80,6 @@ export class LinguistsListComponent implements OnInit, AfterViewInit {
     }
 
 
-    closeDropdown() {
-        this.dropdownMenu = {rowIndex: -1, isOpen: false};
-    }
-
 
 }
-
-*****************************************/
+***********************/

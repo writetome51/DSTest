@@ -4,11 +4,14 @@
 
 		<div class="column-header">{{column.name}}</div>
 
-		<div *ngFor="let user of users;let i = index" class="table-row"
+		<div *ngFor="let user of users; let i = index" class="row-cell"
 			 [class.highlightedRow]="i === highlightedRow"
-			 (mouseover)="highlightedRow = i" (mouseout)="highlightedRow = -1"
+			 (mouseover)="highlightedRow = i"
+			 (mouseout)="highlightedRow = -1"
 		>
+
 			{{user[column.property]}}
+
 		</div>
 
 	</div>
@@ -16,89 +19,4 @@
 </div>
 
 
-<!--  The hidden subtable's expanding functionality is brought to you by
-	CollapsibleDetailRowDirective  -->
-
-<!--   Hidden Subtable    -->
-<ng-template #expandedRowTpl let-thisRow>
-	<div class="mat-row expanded-row" [@detailExpand]>
-
-		<!--   Subtable header row    -->
-		<div class="mini-row  subtable-header-row">
-			<div *ngFor="let columnTitle of userColumnInfoService.subtableColumnTitles;
-							let columnIndex = index;"
-				 class="cell {{htmlAttributesService.subtableColumnCellClasses[columnIndex]}}">
-				{{columnTitle}}
-			</div>
-		</div>
-		<!--  / Subtable header row   -->
-
-
-		<!--   Subtable data row    -->
-		<div *ngFor="let row of thisRow.rows; let rowID = index;" title="Click for rates"
-			 class="mini-row subtable-data-row"
-			 [class.highlightedRow]="highlightedSubtableRow === rowID"
-			 (mouseover)="highlightRow('highlightedSubtableRow',rowID)"
-			 [collapsibleDetailRow]="thisRow" [collapsibleDetailRowTpl]="hiddenRatesRowTpl"
-			 (toggleChange)="onToggleSubrow($event, row)">
-			<div class="cell active-cell"><input type="checkbox" [checked]="row.active"></div>
-			<div class="cell pool-cell"><input type="checkbox" [checked]="row.pool"></div>
-			<div class="cell source-cell">{{row.source}}</div>
-			<div class="cell target-cell">{{row.target}}</div>
-
-			<!--  Access Rights cell with the dropdown menu    -->
-			<div class="cell access-rights-cell">
-				<div class="dropdown-button-menu-group" (mouseleave)="closeDropdown()">
-					<button mat-button (click)="toggleDropdown(rowID, $event)"
-							class="access-rights-button">
-						{{row.access_rights_count + ' selected'}}
-						<span class="mat-select-arrow"></span>
-					</button>
-					<ul *ngIf="dropdownMenu.rowIndex === rowID && dropdownMenu.isOpen"
-						class="access-rights-dropdown-menu">
-						<li *ngFor="let role of row.roles; let roleID = index;"
-							(mouseover)="highlightRow('highlightedDropdownItem', roleID)"
-							[class.highlightedRow]="highlightedDropdownItem === roleID"
-							class="dropdown-menu-item">
-							<mat-icon *ngIf="role.assigned">done</mat-icon>
-							{{role.name}}
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!--  / Access Rights cell with the dropdown menu    -->
-
-		</div>
-		<!--  / Subtable data row   -->
-
-	</div>
-</ng-template>
-<!--  / Hidden Subtable    -->
-
-
-<!--   Hidden Rates Row    -->
-<ng-template #hiddenRatesRowTpl let-thisSubrow>
-
-	<div class="rates-row" [@detailExpand]>
-
-		<div class="mini-row subtable-header-row">
-			<div class="cell rate-cell" *ngFor="let header of usersDataSourceService.rateHeaders">
-				<div [title]="header.title">
-					{{header.name}}
-				</div>
-			</div>
-		</div>
-
-		<div class="mini-row rates-table-row rates-table-values">
-			<div class="cell rate-cell"
-				 *ngFor="let rateValue of usersDataSourceService.currentlyViewedRates">
-				<div>
-					{{rateValue}}
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-</ng-template>
-<!--  / Hidden Rates Row    -->
+<button appExample>Button</button>

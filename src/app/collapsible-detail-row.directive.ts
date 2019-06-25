@@ -14,7 +14,7 @@ import {
 export class CollapsibleDetailRowDirective {
 
 
-	private row: any;
+	private row = -1;
 	private tRef: TemplateRef<any>;
 	private opened: boolean;
 
