@@ -25,6 +25,7 @@
     "@writetome51/has-value-no-value": "^1.0.2",
     "@writetome51/observable-service": "^3.0.0",
     "@writetome51/unsubscribe-on-destroy-component": "^2.0.0",
+    "error-if-not-string": "^1.0.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",

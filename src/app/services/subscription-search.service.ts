@@ -3,8 +3,8 @@ import { noValue } from '@writetome51/has-value-no-value';
 import { ObservableService } from '@writetome51/observable-service';
 import { Subscription } from 'rxjs';
 
-// Implements functionality for simple search where the data to search is retrieved
-// via a subscription to an observable.
+// Skeletal functionality for search operations where the data to search is retrieved
+// via a Subscription to an Observable.
 
 export abstract class SubscriptionSearchService extends AbstractSearchService {
 
@@ -13,13 +13,14 @@ export abstract class SubscriptionSearchService extends AbstractSearchService {
 
     constructor(private __observable: ObservableService) {
         super();
-        if (noValue(this.__subscription)) {
-            this.__set__subscription();
-        }
+        this.__set__subscription();
     }
 
 
     get subscription(): Subscription {
+        if (noValue(this.__subscription)) {
+            this.__set__subscription();
+        }
         return this.__subscription;
     }
 
