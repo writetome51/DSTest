@@ -5,8 +5,7 @@ import { UserSearchService } from '../services/user-search.service';
 
 @Component({
     selector: 'user-table',
-    templateUrl: './user-table.component.html',
-    styleUrls: ['./user-table.component.sass']
+    templateUrl: './user-table.component.html'
 })
 export class UserTableComponent extends UnsubscribeOnDestroyComponent implements AfterViewInit {
 
@@ -16,7 +15,7 @@ export class UserTableComponent extends UnsubscribeOnDestroyComponent implements
         {name: 'Email', property: 'email'}
     ];
 
-    highlightedRow = -1;
+    highlightedRow = -1; // the index of the row.
 
 
     constructor(private __userSearch: UserSearchService) {

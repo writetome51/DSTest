@@ -7,11 +7,12 @@ import { SubscriptionSearchService } from './subscription-search.service';
 @Injectable()
 export class UserSearchService extends SubscriptionSearchService {
 
+    private __searchText = '';
+
+
     constructor(__usersObservable: UsersObservableService) {
 
         super(__usersObservable);
-
-        this._criteria ='';
 
         this._searchAlgorithm = () => {
             if (this.searchText.length === 0) return this._data;
@@ -31,12 +32,12 @@ export class UserSearchService extends SubscriptionSearchService {
 
     set searchText(value) {
         errorIfNotString(value);
-        this._criteria = value;
+        this.__searchText = value;
     }
 
 
     get searchText(): string {
-        return this._criteria;
+        return this.__searchText;
     }
 
 
