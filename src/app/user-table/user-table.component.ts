@@ -1,9 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { CollapsibleDetailRowDirective } from '../collapsible-detail-row.directive';
-import { getProperty } from '@writetome51/get-property';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 import { UserSearchService } from '../services/user-search.service';
-import { UserDisplayPrepService } from '../services/user-display-prep.service';
 import { trigger, animate, state, style, transition } from '@angular/animations';
 
 

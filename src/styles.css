@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 .container {
     min-width: 600px;
+}
+
+#user-table {
+    padding-left: 30px;
 }
 
 .row {
@@ -15,6 +20,8 @@
     padding-top: 5px;
     min-width: 200px;
     margin: auto;
+
+    border:1px solid black;
 }
 
 .column div {
@@ -26,16 +33,34 @@
     padding-bottom: 6px;
 }
 
+.hidden-subtable{
+    width:100%;
+    max-width: 910px;
+    font-size: 10px;
+    padding:0 20px;
+    margin:auto;
+}
+.hidden-subtable .row{
+    cursor:default;
+}
+
+.hidden-subtable .column{
+    min-width: 100px;
+    max-width:110px;
+    text-align: center;
+    padding:0;
+}
+
+.hidden-subtable .column div {
+    padding:0;
+}
+
 .highlightedRow {
     background-color: #ececec;
 }
 
 #search-field {
     margin-bottom: 15px;
-}
-
-#user-table {
-    padding-left: 30px;
 }
 
 .header-row {
@@ -53,13 +78,4 @@
     font-family: 'Roboto', 'Helvetica Neue', sans-serif;
     font-size: 12px;
     font-weight: 500;
-}
-
-.mini-row .cell {
-    margin: auto;
-    text-align: center;
-}
-
-.subtable-data-row{
-    cursor: pointer;
 }
