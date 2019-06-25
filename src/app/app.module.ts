@@ -6,12 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ObservableAPIDataService } from './services/observable-api-data.service';
+import { UserDisplayPrepService } from './services/user-display-prep.service';
+import { UsersComponent } from './users/users.component';
 import { UserSearchFieldComponent } from './user-search-field/user-search-field.component';
 import { UserTableComponent } from './user-table/user-table.component';
 import { UserSearchService } from './services/user-search.service';
 import { UsersObservableService } from './services/users-observable.service';
-import { UsersComponent } from './users/users.component';
-import { ExampleDirective } from './example.directive';
 
 
 @NgModule({
@@ -20,8 +20,7 @@ import { ExampleDirective } from './example.directive';
         CollapsibleDetailRowDirective,
         UserSearchFieldComponent,
         UserTableComponent,
-        UsersComponent,
-        ExampleDirective,
+        UsersComponent
     ],
     imports: [
         AppRoutingModule,
@@ -30,7 +29,8 @@ import { ExampleDirective } from './example.directive';
         HttpClientModule
     ],
     providers: [
-        ObservableAPIDataService, UserSearchService, UsersObservableService
+        ObservableAPIDataService, UserSearchService, UsersObservableService,
+        UserDisplayPrepService
     ],
     bootstrap: [AppComponent]
 })

@@ -15,10 +15,13 @@ export class UserDisplayPrepService {
     }
 
 
-    getUsersObservable(): Observable<any[]> {
-        return this.__observableAPIData.get().pipe(
-            map((users) => this.__getPreppedUsers(users))
-        );
+    getUsersObservableFunction(): () => Observable<any[]> {
+        return () => {
+            return this.__observableAPIData.get().pipe(
+                map((users) => this.__getPreppedUsers(users))
+            );
+        };
+
     }
 
 
@@ -41,7 +44,7 @@ export class UserDisplayPrepService {
         let properties = ['address.street', 'address.suite', 'address.city', 'address.zipcode'];
         let addressParts = [];
         properties.forEach((prop) => addressParts.push(getProperty(prop, user)));
-        return properties.join(', ');
+        return addressParts.join(', ');
     }
 
 

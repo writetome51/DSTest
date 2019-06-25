@@ -30,6 +30,7 @@ export abstract class SubscriptionSearchService extends AbstractSearchService {
 
         this.__subscription = await this.__observable.subscribe((data) => {
             this._data = data;
+            console.log(data);
         });
     }
 
