@@ -12,6 +12,7 @@ import { UserSearchFieldComponent } from './user-search-field/user-search-field.
 import { UserTableComponent } from './user-table/user-table.component';
 import { UserSearchService } from './services/user-search.service';
 import { UsersObservableService } from './services/users-observable.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { UsersObservableService } from './services/users-observable.service';
     imports: [
         AppRoutingModule,
         BrowserModule,
+        BrowserAnimationsModule,
         FormsModule,
         HttpClientModule
     ],

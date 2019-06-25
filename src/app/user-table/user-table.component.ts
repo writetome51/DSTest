@@ -4,11 +4,20 @@ import { getProperty } from '@writetome51/get-property';
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 import { UserSearchService } from '../services/user-search.service';
 import { UserDisplayPrepService } from '../services/user-display-prep.service';
+import { trigger, animate, state, style, transition } from '@angular/animations';
 
 
 @Component({
     selector: 'user-table',
-    templateUrl: './user-table.component.html'
+    templateUrl: './user-table.component.html',
+    // Required for the collapsible rows:
+    animations: [
+        trigger('detailExpand', [
+            state('void', style({height: '0px', minHeight: '0', visibility: 'hidden'})),
+            state('*', style({height: '*', visibility: 'visible'})),
+            transition('void <=> *', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+        ]),
+    ]
 })
 export class UserTableComponent extends UnsubscribeOnDestroyComponent implements AfterViewInit {
 
@@ -27,9 +36,7 @@ export class UserTableComponent extends UnsubscribeOnDestroyComponent implements
     private __openedRow: CollapsibleDetailRowDirective;
 
 
-    constructor(
-        private __userSearch: UserSearchService
-    ) {
+    constructor(private __userSearch: UserSearchService) {
         super();
     }
 
@@ -73,10 +80,8 @@ export class UserTableComponent extends UnsubscribeOnDestroyComponent implements
 
 
  <!--   Subtable data row    -->
- <div *ngFor="let row of thisRow.rows; let rowID = index;" title="Click for rates"
+ <div *ngFor="let row of thisRow.rows; let rowID = index;"
  class="mini-row subtable-data-row"
- [class.highlightedRow]="highlightedSubtableRow === rowID"
- (mouseover)="highlightRow('highlightedSubtableRow',rowID)"
  >
 
  </div>

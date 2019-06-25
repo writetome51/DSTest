@@ -28,7 +28,7 @@
 
 <div id="user-table">
 
-	<div class="row" id="header-row">
+	<div class="row header-row">
 		<div *ngFor="let column of columns" class="column">
 			<div class="column-header-text">{{column.name}}</div>
 		</div>
@@ -38,7 +38,7 @@
 		 [class.highlightedRow]="i === highlightedRow"
 		 (mouseover)="highlightedRow = i"
 		 (mouseout)="highlightedRow = -1"
-		 [collapsibleDetailRow]="user" [collapsibleDetailRowTpl]
+		 [collapsibleDetailRow]="user" [collapsibleDetailRowTpl]="expandedRowTpl"
 		 (toggleChange)="onToggleRow($event)"
 	>
 		<div *ngFor="let column of columns" class="column">
@@ -48,3 +48,28 @@
 
 </div>
 
+
+<!--   Hidden Subtable    -->
+<ng-template #expandedRowTpl let-this>
+	<div [@detailExpand]>
+
+		<!--   Subtable header row    -->
+		<div class="header-row  subtable-header-row">
+			<div *ngFor="let subtableColumn of subtableColumns"
+				 class="cell"
+			>
+				{{subtableColumn.name}}
+			</div>
+		</div>
+		<!--  / Subtable header row   -->
+
+
+		<!--   Subtable data row    -->
+		<div class="mini-row subtable-data-row">
+
+		</div>
+		<!--  / Subtable data row   -->
+
+	</div>
+</ng-template>
+<!--  / Hidden Subtable    -->
