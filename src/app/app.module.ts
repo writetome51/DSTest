@@ -1,5 +1,6 @@
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { CollapsibleDetailRowDirective } from './collapsible-detail-row.directive';
 import { FormsModule } from '@angular/forms';
@@ -12,7 +13,6 @@ import { UserSearchFieldComponent } from './user-search-field/user-search-field.
 import { UserTableComponent } from './user-table/user-table.component';
 import { UserSearchService } from './services/user-search.service';
 import { UsersObservableService } from './services/users-observable.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
