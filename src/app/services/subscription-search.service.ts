@@ -1,6 +1,5 @@
 import { AbstractSearchService } from './abstract-search.service';
 import { noValue } from '@writetome51/has-value-no-value';
-import { ObservableService } from '@writetome51/observable-service';
 import { Subscription } from 'rxjs';
 
 // Skeletal functionality for search operations where the data to search is retrieved
@@ -12,16 +11,15 @@ export abstract class SubscriptionSearchService extends AbstractSearchService {
     private __subscription: Subscription; // the subscription to this._data
 
 
-    constructor(private __observable: ObservableService) {
+    constructor(private __observable: { subscribe: (data) => Subscription }) {
         super();
         this.__set__subscription();
     }
 
 
     get subscription(): Subscription {
-        if (noValue(this.__subscription)) {
-            this.__set__subscription();
-        }
+        if (noValue(this.__subscription)) this.__set__subscription();
+
         return this.__subscription;
     }
 
