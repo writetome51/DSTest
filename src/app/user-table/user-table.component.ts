@@ -11,8 +11,8 @@ import { trigger, animate, state, style, transition } from '@angular/animations'
     // Required for the collapsible rows:
     animations: [
         trigger('detailExpand', [
-            state('void', style({height: '0px', minHeight: '0', visibility: 'hidden'})),
-            state('*', style({height: '*', visibility: 'visible'})),
+            state('void', style({height: '0px', minHeight: '0', visibility: 'hidden', opacity: 0})),
+            state('*', style({height: '*', visibility: 'visible', opacity: 1})),
             transition('void <=> *', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
         ]),
     ]
@@ -58,35 +58,3 @@ export class UserTableComponent extends UnsubscribeOnDestroyComponent implements
 
 
 }
-
-
-/**********
-
- <!--   Hidden Subtable    -->
- <ng-template #expandedRowTpl let-this>
- <div [@detailExpand]>
-
- <!--   Subtable header row    -->
- <div class="mini-row  subtable-header-row">
- <div *ngFor="let subtableColumn of subtableColumns"
- class="cell"
- >
- {{subtableColumn.name}}
- </div>
- </div>
- <!--  / Subtable header row   -->
-
-
- <!--   Subtable data row    -->
- <div *ngFor="let row of thisRow.rows; let rowID = index;"
- class="mini-row subtable-data-row"
- >
-
- </div>
- <!--  / Subtable data row   -->
-
- </div>
- </ng-template>
- <!--  / Hidden Subtable    -->
-
- *********/
