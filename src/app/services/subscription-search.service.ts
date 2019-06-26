@@ -11,7 +11,11 @@ export abstract class SubscriptionSearchService extends AbstractSearchService {
     private __subscription: Subscription; // the subscription to this._data
 
 
-    constructor(private __observable: { subscribe: (data) => Subscription }) {
+    constructor(
+        private __observable: { 
+        	subscribe: (dataHandler: (data) => void) => Subscription 
+        }
+    ) {
         super();
         this.__set__subscription();
     }
