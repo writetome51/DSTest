@@ -7,7 +7,7 @@ import { UserDisplayPrepService } from './user-display-prep.service';
 })
 export class UsersObservableService extends ObservableService{
 
-  constructor(private __data: UserDisplayPrepService) {
+  constructor(__data: UserDisplayPrepService) {
       super(__data.getUsersObservableFunction());
   }
 

@@ -1,10 +1,6 @@
 import { Subscription } from 'rxjs';
-import { Injectable } from '@angular/core';
 
 
-@Injectable({
-    providedIn: 'root'
-})
 export class SubscriptionService {
 
     private __data: any;

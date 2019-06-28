@@ -6,7 +6,6 @@ import { noValue } from '@writetome51/has-value-no-value';
 export abstract class AbstractSearchService {
 
     protected _searchAlgorithm: () => any[];
-    protected _data = []; // holds all data before search filtering.
 
 
     get results(): any[] {
