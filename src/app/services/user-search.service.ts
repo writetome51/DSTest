@@ -1,18 +1,18 @@
 import { errorIfNotString } from 'error-if-not-string';
 import { Injectable } from '@angular/core';
-import { UsersObservableService } from './users-observable.service';
-import { SubscriptionSearchService } from './subscription-search.service';
+import { SubscriptionService } from './subscription.service';
+import { AbstractSearchService } from './abstract-search.service';
 
 
 @Injectable()
-export class UserSearchService extends SubscriptionSearchService {
+export class UserSearchService extends AbstractSearchService {
 
     private __searchText = '';
 
 
-    constructor(__usersObservable: UsersObservableService) {
+    constructor(public subscription: SubscriptionService) {
 
-        super(__usersObservable);
+        super();
 
         this._searchAlgorithm = () => {
             if (this.searchText.length === 0) return this._data;

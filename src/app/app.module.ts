@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ObservableAPIDataService } from './services/observable-api-data.service';
+import { SubscriptionService } from './services/subscription.service';
 import { UserDisplayPrepService } from './services/user-display-prep.service';
 import { UsersComponent } from './users/users.component';
 import { UserSearchFieldComponent } from './user-search-field/user-search-field.component';
@@ -32,7 +33,7 @@ import { UsersObservableService } from './services/users-observable.service';
     ],
     providers: [
         ObservableAPIDataService, UserSearchService, UsersObservableService,
-        UserDisplayPrepService
+        UserDisplayPrepService, SubscriptionService
     ],
     bootstrap: [AppComponent]
 })
