@@ -3,6 +3,7 @@ import { CollapsibleDetailRowDirective } from '../collapsible-detail-row.directi
 import { UnsubscribeOnDestroyComponent } from '@writetome51/unsubscribe-on-destroy-component';
 import { UserSearchService } from '../services/user-search.service';
 import { trigger, animate, state, style, transition } from '@angular/animations';
+import { UsersSubscriptionService } from '../services/users-subscription.service';
 
 
 @Component({
@@ -34,7 +35,10 @@ export class UserTableComponent extends UnsubscribeOnDestroyComponent implements
     private __openedRow: CollapsibleDetailRowDirective;
 
 
-    constructor(private __userSearch: UserSearchService) {
+    constructor(
+        private __userSearch: UserSearchService,
+        private __usersSubscription: UsersSubscriptionService
+    ) {
         super();
     }
 
@@ -45,11 +49,11 @@ export class UserTableComponent extends UnsubscribeOnDestroyComponent implements
 
 
     ngAfterViewInit(): void {
-        this._subscriptions.push(this.__userSearch.subscription);
+        this._subscriptions.push(this.__usersSubscription);
     }
 
 
-    onToggleRow(cdkDetailRow: CollapsibleDetailRowDirective): void {
+    toggleRow(cdkDetailRow: CollapsibleDetailRowDirective): void {
         if (this.__openedRow && this.__openedRow.expended) {
             this.__openedRow.toggle();
         }

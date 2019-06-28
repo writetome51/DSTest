@@ -11,11 +11,6 @@ export class SearchDataProviderService {
     }
 
 
-    get subscription() {
-        return this.__subscription;
-    }
-
-
     get data() {
         return this.__subscription.data;
     }

@@ -11,7 +11,7 @@
 		 (mouseover)="highlightedRow = i"
 		 (mouseout)="highlightedRow = -1"
 		 [collapsibleDetailRow]="user" [collapsibleDetailRowTpl]="expandedRowTpl"
-		 (toggleChange)="onToggleRow($event)"
+		 (toggleChange)="toggleRow($event)"
 	>
 		<div *ngFor="let column of columns" class="column">
 			<div>{{user[column.property]}}</div>
