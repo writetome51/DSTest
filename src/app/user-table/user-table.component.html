@@ -1,11 +1,14 @@
 <div id="user-table">
 
+	<!--   header row    -->
 	<div class="row header-row">
 		<div *ngFor="let column of columns" class="column">
 			<div class="column-header-text">{{column.name}}</div>
 		</div>
 	</div>
+	<!-- /  header row   -->
 
+	<!--   data row    -->
 	<div *ngFor="let user of users; let i = index" class="row"
 		 [class.highlightedRow]="i === highlightedRow"
 		 (mouseover)="highlightedRow = i"
@@ -17,11 +20,12 @@
 			<div>{{user[column.property]}}</div>
 		</div>
 	</div>
+	<!-- /  data row   -->
 
 </div>
 
 
-<!--   Hidden Subtable    -->
+<!--  Hidden collapsible row    -->
 <ng-template #expandedRowTpl let-thisUser>
 	<div class="hidden-subtable" [@detailExpand]>
 
@@ -44,4 +48,4 @@
 
 	</div>
 </ng-template>
-<!--  / Hidden Subtable    -->
+<!--  / Hidden collapsible row   -->
