@@ -19,7 +19,6 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
-    "@writetome51/app-paginator": "^3.0.0",
     "@writetome51/array-get-adjacent-at": "^1.0.4",
     "@writetome51/array-get-head-tail": "^1.0.5",
     "@writetome51/get-property": "^1.0.4",
