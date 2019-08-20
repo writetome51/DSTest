@@ -1,4 +1,4 @@
-# DSTest
+# table-of-users
 
 App written in Angular v7 for a job opportunity.
 
